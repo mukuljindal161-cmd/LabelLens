@@ -6,7 +6,7 @@ LabelLens is an AI-powered product label analyzer that uses Gemini to analyze pr
 
 ### 1. Clone the repository
 ```bash
-git clone <your-github-repo-url>
+git clone [<your-github-repo-url>](https://github.com/mukuljindal161-cmd/LabelLens)
 cd LabelLens
 ```
 
