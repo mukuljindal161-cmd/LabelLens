@@ -81,7 +81,6 @@ if not st.session_state.onboarded:
         email_address = st.text_input(
             "Your email address",
             placeholder="you@example.com",
-            type="password",
             help="Your LabelLens analysis will be sent here.",
         )
         submitted = st.form_submit_button("Let's go 🚀")
