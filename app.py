@@ -157,29 +157,46 @@ else:
 
 user_input = st.chat_input(
     "Ask about a product, or attach a photo of its label",
-    accept_file=True,
+    accept_file="multiple",
     file_type=["jpg", "jpeg", "png"],
 )
 
 if user_input:
-    photo = user_input.files[0] if user_input.files else None
+    photos = user_input.files
     text = user_input.text
+
+    if len(photos) > 2:
+        st.warning(
+            "Please upload a maximum of 2 images: "
+            "the front and back of the product."
+        )
+        st.stop()
+
     parts = []
 
-    if photo is not None:
-        photo_bytes = photo.getvalue()
-        add_message("user", "image", photo_bytes)
-        parts.append(types.Part.from_bytes(data=photo_bytes, mime_type=photo.type))
+    if photos:
+        for index, photo in enumerate(photos):
+            photo_bytes = photo.getvalue()
+            add_message("user", "image", photo_bytes)
+            parts.append(
+                types.Part.from_bytes(
+                    data=photo_bytes,
+                    mime_type=photo.type,
+                )
+            )
     if text:
         add_message("user", "text", text)
         parts.append(text)
-    elif photo is not None:
+    elif photos:
         parts.append(
-            "Analyze this product label and explain the "
-            "product name, brand, ingredients, nutrition "
-            "information, allergens, additives, preservatives, "
-            "and important label information. Only use information "
-            "that is visible and readable in the provided image."
+            "Analyze the uploaded product images together. "
+            "The images may show the front and back of the same product. "
+            "Identify the product name, brand, ingredients, nutrition "
+            "information, allergens, additives, preservatives, and "
+            "important label information. Combine information from "
+            "both images without duplicating findings. Only use "
+            "information that is visible and readable. If important "
+            "information is missing, mention it clearly."
         )
 
     with st.spinner("Analyzing the product label..."):

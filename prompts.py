@@ -42,13 +42,13 @@ Keep responses clear, concise, friendly, and conversational.
  
 WELCOME_MESSAGE_TEMPLATE = (
     "Hey {name}! 👋 I'm LabelLens 🏷️ - your AI product label analyzer.\n\n"
-    "Snap a photo of a product label, or upload the front and back of a package, "
-    "and I'll help you understand the ingredients, nutrition, allergens, and other "
-    "important information in seconds.\n\n"
-    "You can also ask me follow-up questions about the product. "
-    "When you're done, hit \"Send to 📧 Mail\" above and I'll send the full analysis to your email."
+    "Upload up to 2 photos of a product (front and back) "
+    "for a more complete analysis of its ingredients, nutrition, "
+    "allergens, and other important information.\n\n"
+    "You can also ask follow-up questions about the product. "
+    "When you're done, hit \"Send to 📧 Mail\" above to receive the complete "
+    "analysis in your email."
 )
-
  
  
 SUMMARY_REQUEST_PROMPT = (
