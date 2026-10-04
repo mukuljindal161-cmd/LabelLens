@@ -1,6 +1,6 @@
 # 🏷️ LabelLens
 
-LabelLens is an AI-powered product label analyzer that uses Gemini to analyze product labels and explain ingredients, nutrition, allergens, additives, and other important information. Users can ask follow-up questions and send the final analysis to their email.
+LabelLens is an AI-powered product label analyzer that uses Gemini to analyze product labels and explain ingredients, nutrition, allergens, additives, and other important information. Users can upload the front and back of a product for a more complete analysis, ask follow-up questions, and send the final analysis to their email.
 
 ## 🚀 Run Locally
 
