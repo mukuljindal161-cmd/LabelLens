@@ -46,7 +46,7 @@ WELCOME_MESSAGE_TEMPLATE = (
     "and I'll help you understand the ingredients, nutrition, allergens, and other "
     "important information in seconds.\n\n"
     "You can also ask me follow-up questions about the product. "
-    "When you're done, hit \"Mail\" above and I'll send the full analysis to your email."
+    "When you're done, hit \"Send to 📧 Mail\" above and I'll send the full analysis to your email."
 )
 
  
